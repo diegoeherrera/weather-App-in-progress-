@@ -1,0 +1,90 @@
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#container{
+width:80%;
+  
+}
+
+#main{
+ padding:10px 0px;
+  text-align:center;
+  border-radius:10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width:550px;
+  transform: translate(-50%, -50%); 
+
+  //background:grey;
+  border:1px dotted black;
+  
+}
+
+#geoLocation{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:3em;
+}
+
+#data{
+  position:relative;
+  vertical-align:middle;
+  //background:red;
+  width:100%;
+  height:100%;
+}
+#icon{
+  vertical-align: top;
+  display:inline-block;
+  //background:green;
+  padding-top:30px;
+  width:28%;
+  height:60%;
+  
+}
+#temp{
+  position:relative;
+  padding:15px 10px 15px 0px;
+  vertical-align:top;
+  display:inline-block;
+  //background:blue;
+  width:28%;
+  height:60%;
+  font-size:80px;
+  
+}
+#temp::before{
+content:"ºC";
+font-size:30px;
+position:absolute;
+right:10px;
+top:15px;
+
+}
+#hum{
+  padding-top:10px;
+  //background:green;
+  width:100%;
+  height:50%;
+  
+}
+
+
+
+
+.wi{
+ 
+  font-size:80px;
+}
+
+
+
+#description{
+  padding-top:0px;
+  margin:0 auto;
+  width:80%;
+  height:20%;
+  //background:white;
+  font-size:30px;
+}
