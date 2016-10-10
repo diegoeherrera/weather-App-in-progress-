@@ -52,6 +52,7 @@
 				, function(response){
           
           var wheatherData={
+              id:response.weather[0].id,
               cityName:response.name,
               todayTemp:response.main.temp,
               todayDescription:function (){
@@ -84,13 +85,13 @@
         //day or nigth? check this for setup the right icon
         if(wheatherData.getCurrentTime>wheatherData.sunset){
 
-          
-          $('#wheatIcon').addClass("wi wi-day-sunny");
+          console.log("estamo de noche");
+          $('#wheatIcon').attr('class', 'wi wi-owm-night-' + wheatherData.id);
           
         }else{
 
-           $('#wheatIcon').addClass("wi wi-night-sleet")
-          
+           $('#wheatIcon').attr('class', "wi wi-owm-day-"+wheatherData.id)
+          console.log("NO estamo de noche");
         }        
           
       weather.printInfo(wheatherData);
@@ -100,11 +101,12 @@
 		},
     
     printInfo:function(wheatherData){
-
-      
-      $('#wi-day-sunny').addClass(wheatherData.getIcon);     
+  
      	$('#geoLocation').html(wheatherData.cityName);
+      var celcius=$('<span/>').addClass("celcius").text("ºc");
       $('#temp').html(Math.round(wheatherData.todayTemp));
+      $('#temp').append(celcius);
+
       
       // conversion from mp/h to km/h
       wind=Math.round(wheatherData.wind*1.609344);
